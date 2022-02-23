@@ -4,10 +4,11 @@ Based on Alpine Linux 3.15
 ## Prerequisites
 The following items need to be added to this directory in order to this image.
 
-1. AEM cq-quickstart-6.5.0.jar (provided from Adobe)  
-2. license.properties (license provided from Adobe)  
-3. [ACS Commons 5.1.2 package](https://github.com/Adobe-Consulting-Services/acs-aem-commons/releases/tag/acs-aem-commons-5.1.2)  
-4. [AEM Core Components 2.18.0 package](https://github.com/adobe/aem-core-wcm-components/releases/tag/core.wcm.components.reactor-2.18.0)  
+1. AEM cq-quickstart-6.5.0.jar (from Adobe)  
+2. license.properties (from Adobe)  
+3. AEM 6.5.11 Service Pack (from Adobe)  
+4. [ACS Commons 5.1.2 package](https://github.com/Adobe-Consulting-Services/acs-aem-commons/releases/tag/acs-aem-commons-5.1.2)  
+5. [AEM Core Components 2.18.0 package](https://github.com/adobe/aem-core-wcm-components/releases/tag/core.wcm.components.reactor-2.18.0)  
 
 ## Build
 `docker build -t alpine3.15-aem6.5.11author .`
@@ -24,10 +25,16 @@ The following items need to be added to this directory in order to this image.
 To use this for a local development environment, you can run this container in a WSL2 Ubuntu instance.
 
 ## Prerequisites
-1. [Install WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-manual)  
-2. Install Ubuntu 20.04 (ARM64)  
+- [Install WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-manual)  
+- Install Ubuntu 20.04 (ARM64)  
+    ```
+    # run in administrator powershell
+    Invoke-WebRequest -Uri https://aka.ms/wslubuntu2004 -OutFile Ubuntu.appx -UseBasicParsing 
+    Import-Module Appx -usewindowpowershell 
+    Add-AppxPackage .\Ubuntu.appx 
+    ```
 
-You can additionally use the `.wslconfig` file to limit the amount of resources used.  
+You can additionally use the `.wslconfig` file to limit the amount of resources used by WSL.  
 Example .wslconfig:
 ```
 [wsl2]
