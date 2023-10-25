@@ -30,11 +30,11 @@ To use this for a local development environment, you can run this container in a
     ```
     # run in administrator powershell
     Invoke-WebRequest -Uri https://aka.ms/wslubuntu2004 -OutFile Ubuntu.appx -UseBasicParsing 
-    Import-Module Appx -usewindowpowershell 
+    Import-Module Appx -usewindowspowershell 
     Add-AppxPackage .\Ubuntu.appx 
     ```
 
-You can additionally use the `.wslconfig` file to limit the amount of resources used by WSL.  
+You can additionally use the `.wslconfig` file to limit the amount of resources used by WSL. See References for more information.  
 Example .wslconfig:
 ```
 [wsl2]
